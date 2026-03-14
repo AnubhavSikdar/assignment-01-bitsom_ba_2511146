@@ -57,14 +57,10 @@ This is a **delete anomaly**.
 
 # Normalization Justification
 
-Keeping everything in one table may look simple, but it creates many problems.
+While keeping all the data in one big table might seem easier at first, it actually creates a massive headache for anyone trying to manage it. This is why database normalization is such a lifesaver.
 
-In this dataset, customer details, product details, and sales representative details are repeated many times. For example, Priya Sharma from Delhi appears in multiple orders. If her email changes, it must be updated in every row where she appears.
+Right now, the dataset is full of redundant information. For example, a customer like Priya Sharma has her name, city, and email repeated every single time she places an order. This leads to a major issue called an update anomaly. If Priya changes her email address, we would have to hunt down every single row where she appears and update it manually. If we miss even one spot, your data becomes inconsistent and unreliable.
 
-The same issue happens with sales representatives. For example, Deepak Joshi's office address appears in many rows. Updating it in multiple places increases the risk of mistakes.
+The same thing happens with sales reps like Deepak Joshi. His office address is copied across dozens of rows. If his office moves, we're stuck doing a repetitive, error-prone cleanup. Also, there’s a storage problem: under the current setup, we can’t even add a new product to the system until someone actually buys it, which makes it impossible to keep a proper inventory.
 
-Another issue is that new products cannot be stored unless an order exists.
-
-Normalization solves these problems by splitting the data into separate tables such as Customers, Products, Orders, and Sales Representatives. Each piece of information is stored only once and linked using keys.
-
-This reduces duplication, prevents anomalies, and keeps the data consistent.
+Normalization fixes this by breaking the data into logical, separate tables like Customers, Products, Orders, and Sales Reps. Instead of repeating everything, we store each detail exactly once and use Foreign Keys to link them together. It might mean managing more tables, but it completely removes redundancy, prevents errors, and makes the database much easier to scale as the business grows.
