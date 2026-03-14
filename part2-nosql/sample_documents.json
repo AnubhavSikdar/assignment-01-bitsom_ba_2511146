@@ -1,0 +1,22 @@
+[
+  {
+    "name": "HP Workstation",
+    "category": "Electronics",
+    "price": 375000,
+    "specs": { "ram": "32GB", "warranty_years": 2, "voltage": "340V" }
+  },
+  {
+    "name": "Cottage Cheese",
+    "category": "Groceries",
+    "price": 320,
+    "expiry_date": "2026-03-29",
+    "nutrition": ["Protein: 230g", "Calories: 3000kcal"]
+  },
+  {
+    "name": "Linen Pants",
+    "category": "Clothing",
+    "price": 2999,
+    "size": ["S", "M", "L"],
+    "material": "100% Linen"
+  }
+]
