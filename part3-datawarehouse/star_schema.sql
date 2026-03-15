@@ -1,12 +1,10 @@
--- Drop tables if they already exist
+
 DROP TABLE IF EXISTS fact_sales;
 DROP TABLE IF EXISTS dim_date;
 DROP TABLE IF EXISTS dim_store;
 DROP TABLE IF EXISTS dim_product;
 
--- ========================
--- Dimension Table: Date
--- ========================
+
 CREATE TABLE dim_date (
     date_id INTEGER PRIMARY KEY,
     full_date DATE NOT NULL,
@@ -14,27 +12,21 @@ CREATE TABLE dim_date (
     year INTEGER NOT NULL
 );
 
--- ========================
--- Dimension Table: Store
--- ========================
+
 CREATE TABLE dim_store (
     store_id INTEGER PRIMARY KEY,
     store_name TEXT NOT NULL,
     city TEXT NOT NULL
 );
 
--- ========================
--- Dimension Table: Product
--- ========================
+
 CREATE TABLE dim_product (
     product_id INTEGER PRIMARY KEY,
     product_name TEXT NOT NULL,
     category TEXT NOT NULL
 );
 
--- ========================
--- Fact Table
--- ========================
+
 CREATE TABLE fact_sales (
     sale_id INTEGER PRIMARY KEY,
     date_id INTEGER NOT NULL,
@@ -47,9 +39,7 @@ CREATE TABLE fact_sales (
     FOREIGN KEY (product_id) REFERENCES dim_product(product_id)
 );
 
--- ========================
--- Insert sample cleaned dimension data
--- ========================
+
 
 INSERT INTO dim_date VALUES
 (1,'2023-01-15',1,2023),
@@ -70,9 +60,7 @@ INSERT INTO dim_product VALUES
 (4,'Desk Lamp','Home'),
 (5,'Python Book','Books');
 
--- ========================
--- Insert Fact Table data
--- ========================
+
 
 INSERT INTO fact_sales VALUES
 (1,1,1,1,2,90000),
