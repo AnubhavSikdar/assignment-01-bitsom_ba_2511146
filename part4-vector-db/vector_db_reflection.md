@@ -1,0 +1,9 @@
+## Vector DB Use  in Law Firm
+
+A **traditional keyword-based database search would not be sufficient** for searching complex legal documents such as 500-page contracts. Keyword search relies on exact word matches and simple text indexing. This approach often fails when the wording in the document differs from the words used in the query. For example, a lawyer might search for **"Something In Return Of Something"**, but the contract could describe the same concept using phrases such as **"Quid Pro Quo"** or a lawyer might search for **"termination clauses"** but the contract could describe the same concept using phrases such as **“conditions for ending the agreement”** or **“contract abandon”**. A keyword-based system may miss these sections because the exact terms do not match.
+
+Vector databases address this limitation by using embeddings that represent the semantic meaning of text rather than just the words themselves. In this approach, the contract is first divided into smaller sections or paragraphs. Each section is converted into a numerical vector using an embedding model. These vectors capture the underlying meaning of the text and are stored inside a vector database.
+
+When a lawyer asks a question in plain English, the query is also converted into a vector. The system then performs a similarity search to find document sections whose vectors are closest to the query vector. This allows the system to retrieve relevant clauses even when the wording differs significantly from the original query.
+
+Vector databases are optimized for fast similarity searches across high-dimensional vectors, making them suitable for large collections of documents. In a legal search system, they enable semantic search, improved accuracy, and faster retrieval of relevant information compared to traditional keyword-based databases.
